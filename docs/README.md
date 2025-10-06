@@ -1,5 +1,46 @@
 # Reflection
 
+## Week 2
+
+1. InsertIntoArray
+
+	a. The method inserts an item at a specified index.
+
+	b. At the worst case it has to shift every item.
+
+	c. has to shift the array before inserting
+2. DeleteFromArray
+
+	a. Deletes the item from a specified index.
+
+	b. At the worst case it has to shift every item.
+
+	c. Works very similarly to inserting
+3. ConcatenateNamesNaive
+
+	a. Merges an array of names into one string by looping over them.
+
+	b. It loops over every item to add them together. To do this it needs to loop over every character to copy them over.
+
+	c. Youre actuallu doing multiple concatinations to add commas between each item.
+4. ConcatenateNamesBuilder
+
+	a. Merges an array of names into one string by using a StringBuilder.
+
+	b. It inserts into an already made array and grows as it needs to. At worst case it needs to copy all the characters into the new section.
+
+	c. Trys to bypass allocation time by preallocating the space needed.
+5. InsertIntoList
+
+	a. Inserts an item into a list.
+
+	b. It inserts into an already made array and grows as it needs to. At worst case it needs to copy into the new array.
+
+	c. Trys to bypass allocation time by preallocating the space needed.
+![Test Results](Test-Results-10-05-2025.png)
+![Test Results Output](Test-Results-Output-10-05-2025.png)
+
+## Week 1
 1. Constant Method
 
 	a. The method returns the first item of the array.
