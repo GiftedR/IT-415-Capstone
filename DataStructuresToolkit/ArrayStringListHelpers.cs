@@ -32,7 +32,7 @@ public class ArrayStringListHelpers
 	/// <remarks>Time: O(n) - Worst case is beginning and the entire array has to be shifted.</remarks>
 	public static int[] DeleteFromArray(int[] arr, int index)
 	{
-		for (int idx = index; idx < arr.Length; idx++)
+		for (int idx = index; idx < arr.Length - 1; idx++)
 		{
 			arr[idx] = arr[idx + 1];
 		}
