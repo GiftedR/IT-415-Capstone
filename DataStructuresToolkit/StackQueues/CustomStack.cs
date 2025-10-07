@@ -23,6 +23,8 @@ public class CustomStack<T>
 
 	public T Pop()
 	{
+		if (_count == 0)
+			throw new InvalidOperationException("Unable to pop an empty stack.");
 		T popitem = _items[_count - 1];
 		_items[_count - 1] = default!;
 		_count--;
