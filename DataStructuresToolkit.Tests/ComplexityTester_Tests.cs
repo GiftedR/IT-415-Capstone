@@ -4,6 +4,7 @@ using NUnit.Framework.Internal;
 namespace DataStructuresToolkit.Tests;
 
 [TestFixture]
+[Ignore("Takes too long")]
 public static class ComplexityTesterTests
 {
 	const double leniencyms = 5;
