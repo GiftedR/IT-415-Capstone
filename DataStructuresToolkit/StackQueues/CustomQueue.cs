@@ -27,13 +27,15 @@ public class CustomQueue<T>
 
 	public T Dequeue()
 	{
+		if (Count == 0)
+			throw new InvalidOperationException("Unable to dequeue an empty queue.");
 		T dqitem = _items[_head];
 		_items[_head] = default!;
 		_head++;
 		return dqitem;
 	}
 
-	public T Peek() => Count > 0 ? _items[_head] : throw new InvalidOperationException("Unable to peek an empty stack.");
+	public T Peek() => Count > 0 ? _items[_head] : throw new InvalidOperationException("Unable to peek an empty queue.");
 
 	private void _ShiftItems()
 	{
