@@ -77,4 +77,34 @@ public class CustomQueue_Tests
 			Throws.InvalidOperationException
 		);
 	}
+
+	[DatapointSource]
+	public int[] TestSizes = { 100, 1000, 10000 };
+
+	[Theory]
+	public static void DataStructureShouldShowWraparoundBehavior(int count)
+	{
+		CustomQueue<int> cq = new((uint)count);
+		int[] expected = new int[count];
+		bool matches = true;
+
+		for (int idx = 0; idx < count; idx++)
+		{
+			cq.Enqueue(idx);
+			expected[idx] = idx;
+		}
+
+		TestContext.Out.Write($"CQ: {cq.Count} @ {cq.Capacity}; Arr: {expected.Length}");
+
+
+		for (int idx = 0; idx < count; idx++)
+		{
+			if (expected[idx] != cq.Dequeue())
+				matches = false;
+		}
+
+		Assert.That(
+			matches
+		);
+	}
 }
