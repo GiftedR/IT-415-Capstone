@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresToolkit", "Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresToolkit.Tests", "DataStructuresToolkit.Tests\DataStructuresToolkit.Tests.csproj", "{0E1A56C6-7415-4032-A162-A389E88BA88E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoHarness", "DemoHarness\DemoHarness.csproj", "{3920766B-1944-49A3-AD83-C36EFA997F81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{0E1A56C6-7415-4032-A162-A389E88BA88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E1A56C6-7415-4032-A162-A389E88BA88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E1A56C6-7415-4032-A162-A389E88BA88E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3920766B-1944-49A3-AD83-C36EFA997F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3920766B-1944-49A3-AD83-C36EFA997F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3920766B-1944-49A3-AD83-C36EFA997F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3920766B-1944-49A3-AD83-C36EFA997F81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
