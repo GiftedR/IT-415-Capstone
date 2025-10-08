@@ -16,7 +16,7 @@ public class CustomQueue<T>
 
 	public void Enqueue(T newitem)
 	{
-		if (_tail == Capacity - 1)
+		if (_tail == Capacity)
 			if (Count < Capacity)
 				_ShiftItems();
 			else
@@ -39,15 +39,10 @@ public class CustomQueue<T>
 
 	private void _ShiftItems()
 	{
-		int shiftamount = Capacity - Count;
-		for (int idx = 0; idx < Capacity; idx++)
-		{
-			if (idx < Capacity - shiftamount)
-				_items[idx] = _items[idx + shiftamount];
-			else
-				_items[idx] = default!;
-		}
-		_head -= shiftamount;
-		_tail -= shiftamount;
+		int currentCount = Count;
+		T[] newitems = new T[Capacity];
+		Array.Copy(_items, _head, newitems, 0, currentCount);
+		_head = 0;
+		_tail = currentCount - 1;
 	}
 }
