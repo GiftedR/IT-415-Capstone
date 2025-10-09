@@ -1,69 +1,39 @@
-# Reflection
+# Data Structures Toolkit
 
-## Week 2
+## Custom Types
 
-1. InsertIntoArray
+### Custom Stack
 
-	a. The method inserts an item at a specified index.
+The custom stack is a custom version of the default stack, only built for educational value.
 
-	b. At the worst case it has to shift every item.
+#### Stack Properties
 
-	c. has to shift the array before inserting
-2. DeleteFromArray
+__Capacity__: Shows how many items can be added to the stack before it goes through its resizing.
 
-	a. Deletes the item from a specified index.
+__Count__: Shows the number of items current stored in the stack.
 
-	b. At the worst case it has to shift every item.
+#### Stack Methods
 
-	c. Works very similarly to inserting
-3. ConcatenateNamesNaive
+__Push__: Adds a new item to the top of the stack.
 
-	a. Merges an array of names into one string by looping over them.
+__Pop__: Returns next item on the stack and removes it, or throws an InvalidOperationException for an empty stack.
 
-	b. It loops over every item to add them together. To do this it needs to loop over every character to copy them over.
+__Peek__: Returns next item on the stack without removing it, or throws an InvalidOperationException for an empty stack.
 
-	c. Youre actuallu doing multiple concatinations to add commas between each item.
-4. ConcatenateNamesBuilder
+### Custom Queue
 
-	a. Merges an array of names into one string by using a StringBuilder.
+The custom queue is a custom version of the default queue, only built for educational value.
 
-	b. It inserts into an already made array and grows as it needs to. At worst case it needs to copy all the characters into the new section.
+#### Queue Properties
 
-	c. Trys to bypass allocation time by preallocating the space needed.
-5. InsertIntoList
+__Capacity__: Shows how many items can be added to the queue before it goes through its resizing.
 
-	a. Inserts an item into a list.
+__Count__: Shows the number of items current stored in the queue.
 
-	b. It inserts into an already made array and grows as it needs to. At worst case it needs to copy into the new array.
+#### Queue Methods
 
-	c. Trys to bypass allocation time by preallocating the space needed.
-![Test Results](Test-Results-10-05-2025.png)
-![Test Results Output](Test-Results-Output-10-05-2025.png)
+__Enqueue__: Adds a new item to the end of the queue.
 
-## Week 1
-1. Constant Method
+__Dequeue__: Removes the next item from the start of the queue, or throws an InvalidOperationException for an empty queue.
 
-	a. The method returns the first item of the array.
-
-	b. It is classified as O(1) because the time it takes is the same regardless of the size of the data being put into it.
-
-	c. It stayed the same, It only adjusted by margin of error.
-
-2. Linear Method
-
-	a. The method loops through an array and determines whether or not to incude an input from the first array.
-	
-	b. It is classified as O(n) as it only loops through the array once.
-
-	c. The difference in time was a 10x increase per step which matched the increase in the input size.
-
-3. Quadratic Method
-
-	a. The method adds the ascii value of each character matched with each other character in the string to give the word a score.
-	
-	b. It is classified as O(n²) because it loops through the data within a loop that is already looping the data.
-
-	c. The time changed at a rate of 100x which matches the squared increase in the data size 10x²
-
-![Test Explorer Results](TestResults-09-28-2025.png)
-![Test Explorer Results](TestResults-Output-09-28-2025.png)
+__Peek__: Views the next item at the beginning of the queue, or throws an InvalidOperationException for an empty queue.
