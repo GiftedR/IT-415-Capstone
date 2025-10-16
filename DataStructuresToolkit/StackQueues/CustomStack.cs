@@ -1,4 +1,4 @@
-namespace DataStructuresToolkit.Stackstacks;
+namespace DataStructuresToolkit.StackQueues;
 
 /// <summary>
 /// Custom implementation of the built in stack.
