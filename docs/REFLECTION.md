@@ -1,5 +1,13 @@
 # Reflection
 
+## Week 5
+
+1. The easiest methods to implement were the linear search and the binary search. This is because the idea behind them was simple enough to get written and debug if needed. This is in contrast to Quick Sort which wasn't as simple to debug. There was also an issue where stack overflows would out print the console buffer (Print so many lines that the useful information was hidden). This caused me to rewrite Quick sort with a more iterative approach instead of recursively.
+
+When it came to the performance between them, quick sort was the fastest for sorting, and binary search was the fastest for searching. Although the first run through of the method was substantially higher than subsequent runs due to some of the ways the compiler handles the methods. Needing to cache the methods before being able to run them and such.
+
+As for which algorithm I would use in the capstone, for the capstone of 415 all of them would be used because we are just turning in the current project. As for the capstone of the degree, I will probably use quick sort and binary search to allow for quicker saving and loading of custom project files that will be used.
+
 ## Week 3
 
 1. When comparing the built in stack and queue vs my custom implementation. I would definately use the built in over mine in almost any situation. The main reason for this is that I don't have to stress about wheither or not the stack or queue has hidden bugs when building applications. The only time I would use the custom version is when I need to be able to look in the middle of the stack or queue. Like for an actual ticketing system, where its not just the first one that matters, but all of them ordered by priority.
