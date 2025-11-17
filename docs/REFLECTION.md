@@ -1,5 +1,45 @@
 # Reflection
 
+## Week 8
+
+1.  With collisions, the best way to handle them depends on the use case for the hash table. In our use case, it was preferred that they both end up relating to their keys. In other cases, it would be better to either throw an exception, or generate a unique id for each item. The ladder would allow for duplicates, but also require an extra bit of information when accessing the stored values.
+
+	Built in implementations mainly diminish worries about bugs as they are already tested. They also can save time as they are already built into the language. 
+
+	For most cases in real world projects, the default implementations cover most use cases. One is most likely to find custom build solutions as they get farther and farther from standard use cases. Like building an entire custom framework, or for designing a class around a specific programming paradigm like the builder pattern. The most common place to find custom implementations of these classes is in reference to game design. The game engine known as Godot uses a custom version of a dictionary known as the uid system, where uids refer to each file inside a project and can be used for looking up resources. This also is built to update when files are moved so paths don't need to be fixed, and puts less work on the developer.
+
+2. A. Console Output
+> Setting Alice with the phone number 555-1234...
+>
+> Setting Bob with the phone number 555-5678...
+>
+> Setting Charlie with the phone number 555-9012...
+>
+> David has a number is False
+>
+> Starting HashSet Demo:
+>
+> Inserting Apple into the HashSet
+>
+> Inserting Apple into the HashSet Again
+>
+> Current HashSet values:
+>
+> [ Apple ]
+
+2. B. Test Output
+> Simple Has Table State:
+>
+> [0] : []
+>
+> [1] : []
+>
+> [2] : [ 12,  22,  37, ]
+>
+> [3] : []
+>
+> [4] : []
+
 ## Week 5
 
 1. The easiest methods to implement were the linear search and the binary search. This is because the idea behind them was simple enough to get written and debug if needed. This is in contrast to Quick Sort which wasn't as simple to debug. There was also an issue where stack overflows would out print the console buffer (Print so many lines that the useful information was hidden). This caused me to rewrite Quick sort with a more iterative approach instead of recursively.
