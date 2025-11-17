@@ -3,6 +3,8 @@ using System.Text;
 using DataStructuresToolkit;
 using DataStructuresToolkit.StackQueues;
 
+namespace DemoHarness;
+
 internal class Program
 {
 	public static void Main(string[] args)
@@ -148,6 +150,10 @@ internal class Program
 		Console.WriteLine( "              |-------100--------|-------1000-------|-------10000------|");
 		Console.WriteLine($"Linear Search | {ls100} | {ls1000} | {ls10000} |");
 		Console.WriteLine($"Binary Search | {bs100} | {bs1000} | {bs10000} |");
+		
+		{ // Associative Helpers
+			AssociativeHelpers.Run();
+		}
 	}
 	private static int[] gen(int size)
 	{
