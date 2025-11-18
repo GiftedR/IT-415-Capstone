@@ -12,6 +12,7 @@ public class LinkedList<T>
 	public void AddFirst(T data)
 	{
 		Node<T> newHead = new(data);
+		Count++;
 		if (Head == null)
 		{
 			Head = newHead;
@@ -22,18 +23,40 @@ public class LinkedList<T>
 		Head = newHead;
 	}
 	
-	public Node<T>? GetNode(Node<T> node)
+	public Node<T>? GetNode(Node<T> node, int offset = 0)
 	{
 		if (Head == null) return null;
 		Node<T> _fore = Head!;
+		List<Node<T>> history = new();
 
 		while ( _fore.Next != null )
 		{
-			if (_fore == node) return node;
+			history.Add(_fore);
+			if (_fore == node)
+			{
+				if (offset < 1)
+					return node;
+				else
+					return history[^(offset + 1)];
+			}
 			_fore = _fore.Next!;
 		}
 
 		return null;
+	}
+
+	public T? GetValue(T value)
+	{
+		if (Head == null) return default;
+		Node<T> _fore = Head!;
+
+		while ( _fore.Next != null )
+		{
+			if ((dynamic)_fore.Data! == (dynamic)value!) return value;
+			_fore = _fore.Next!;
+		}
+
+		return default;
 	}
 
 	public void Remove(Node<T> node)
@@ -46,8 +69,9 @@ public class LinkedList<T>
 		}
 		else
 		{
-			Node<T>? delNode = GetNode(node);
-			if (delNode == null) return;
+			Node<T>? prevDelNode = GetNode(node, 1);
+			if (prevDelNode == null) return;
+			prevDelNode.Next = prevDelNode.Next!.Next;
 		}
 	}
 
@@ -55,17 +79,16 @@ public class LinkedList<T>
 	{
 		if (Head == null) return "";
 		StringBuilder sb = new();
-		Node<T> _head = Head!;
 		Node<T> _point = Head!;
 
 		sb.Append($"[HEAD]:{_point.Data}{separator}");
-		while(_point.Next != _head)
+		while(_point.Next != null)
 		{
 			_point = _point.Next!;
 			sb.Append($"{_point.Data}{separator}");
 		}
 
-		sb.Append("<HEAD>");
+		sb.Append("<END>");
 
 		return sb.ToString();
 	}

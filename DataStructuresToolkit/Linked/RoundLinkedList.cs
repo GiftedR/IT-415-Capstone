@@ -2,7 +2,7 @@ using System.Text;
 
 namespace DataStructuresToolkit.Linked;
 
-public class DoublyLinkedList<T>
+public class RoundLinkedList<T>
 {
 	public DoubleNode<T>? Head { get; protected set; }
 	public DoubleNode<T>? Tail { get; protected set; }
@@ -18,7 +18,10 @@ public class DoublyLinkedList<T>
 		}
 		DoubleNode<T> newHead = new(data);
 		newHead.Next = Head;
+		newHead.Prev = Tail;
+		
 		Head!.Prev = newHead;
+		Tail!.Next = newHead;
 		Head = newHead;
 	}
 	
@@ -32,6 +35,9 @@ public class DoublyLinkedList<T>
 		}
 		DoubleNode<T> newTail = new(data);
 		newTail.Prev = Tail;
+		newTail.Next = Head;
+
+		Head!.Prev = newTail;
 		Tail!.Next = newTail;
 		Tail = newTail;
 	}
@@ -61,12 +67,14 @@ public class DoublyLinkedList<T>
 
 		if (node == Head)
 		{
-			Head.Next!.Prev = null;
+			Tail!.Next = Head.Next;
+			Head.Next!.Prev = Tail;
 			Head = Head.Next;
 		}
 		else if (node == Tail)
 		{
-			Tail.Prev!.Next = null;
+			Tail.Prev!.Next = Head;
+			Head!.Prev = Tail.Prev;
 			Tail = Tail.Prev;
 		}
 		else
@@ -93,7 +101,7 @@ public class DoublyLinkedList<T>
 			sb.Append($"{_point.Data}{separator}");
 		}
 
-		sb.Append("<END>");
+		sb.Append("<HEAD>");
 
 		return sb.ToString();
 	}
@@ -113,7 +121,7 @@ public class DoublyLinkedList<T>
 			sb.Append($"{_point.Data}{separator}");
 		}
 
-		sb.Append("<END>");
+		sb.Append("<TAIL>");
 
 		return sb.ToString();
 	}
