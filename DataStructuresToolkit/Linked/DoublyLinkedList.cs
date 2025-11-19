@@ -36,14 +36,29 @@ public class DoublyLinkedList<T>
 		Tail = newTail;
 	}
 	
-	public DoubleNode<T>? GetNode(DoubleNode<T> node)
+	public DoubleNode<T>? GetNode(DoubleNode<T> node, int offset = 0)
 	{
 		if (Head == null || Tail == null) return null;
 		DoubleNode<T> _fore = Head!;
 		DoubleNode<T> _back = Tail!;
+
 		do
 		{
-			if (_fore == node || _back == node) return node;
+			if (_fore == node || _back == node)
+			{
+				if (offset < 1)
+				{
+					return node;
+				}
+				else
+				{
+					DoubleNode<T> _ptr = node;
+					for (int idx = 0; idx < offset; idx++)
+						_ptr = _ptr.Prev!;
+					return _ptr;
+				}
+					
+			}
 			_fore = _fore.Next!;
 			_back = _back.Prev!;
 		}
@@ -53,6 +68,20 @@ public class DoublyLinkedList<T>
 		);
 
 		return null;
+	}
+
+	public T? GetValue(T value)
+	{
+		if (Head == null) return default;
+		Node<T> _fore = Head!;
+
+		while ( _fore.Next != null )
+		{
+			if ((dynamic)_fore.Data! == (dynamic)value!) return value;
+			_fore = _fore.Next!;
+		}
+
+		return default;
 	}
 
 	public void Remove(DoubleNode<T> node)
@@ -83,11 +112,10 @@ public class DoublyLinkedList<T>
 		if (Head == null || Tail == null) return "";
 		if (Head == Tail) return Head.ToString()!;
 		StringBuilder sb = new();
-		DoubleNode<T> _head = Head!;
 		DoubleNode<T> _point = Head!;
 
 		sb.Append($"[HEAD]:{_point.Data}{separator}");
-		while(_point.Next != _head)
+		while(_point.Next != null)
 		{
 			_point = _point.Next!;
 			sb.Append($"{_point.Data}{separator}");
@@ -103,11 +131,10 @@ public class DoublyLinkedList<T>
 		if (Head == null || Tail == null) return "";
 		if (Head == Tail) return Tail.ToString()!;
 		StringBuilder sb = new();
-		DoubleNode<T> _tail = Tail!;
 		DoubleNode<T> _point = Tail!;
 
 		sb.Append($"[TAIL]:{_point.Data}{separator}");
-		while(_point.Prev != _tail)
+		while(_point.Prev != null)
 		{
 			_point = _point.Prev!;
 			sb.Append($"{_point.Data}{separator}");
