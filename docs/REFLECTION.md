@@ -1,5 +1,14 @@
 # Reflection
 
+## Week 9
+1. I already had an inkling of how linked lists worked as I had played with them while using pointers. The main difference is that normal collective types use consecutive / heap based memory patterns. While lists use more reference or pointer based patterns. The ladder is faster as it doesn't require waiting in order for the system to allocate additional memory.
+
+	When using these collections in practice, there is a good place for either. A circularly linked list can be used in most places a normal doubly linked list can, however, it is more beneficial to use the circular model as there are two references to the list. This means that the reference can be rebuilt if one of them are lost.
+
+	This hasn't deepened my understanding of the referential data types as I already had a firm grasp on the structures and concepts we covered with this weeks work. In order for me to deepen my understanding, I would have to look into the correlation of these referential data structures in the context of special pointers. Like unique pointers or shared pointers.
+
+	Although the assignment didn't increase my understanding, I did enjoy getting to play with generics and the complexities with comparison that occur from not having explicitly defined types.
+
 ## Week 8
 
 1.  With collisions, the best way to handle them depends on the use case for the hash table. In our use case, it was preferred that they both end up relating to their keys. In other cases, it would be better to either throw an exception, or generate a unique id for each item. The ladder would allow for duplicates, but also require an extra bit of information when accessing the stored values.
