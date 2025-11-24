@@ -177,5 +177,29 @@ public class LinkedList_Tests
 
 		Assert.That(ll.ReadForward(separator), Is.EqualTo($"[HEAD]:69{separator}78{separator}84{separator}99{separator}103{separator}<END>"));
 	}
+
+	[Test]
+	public void GivenSimilarValuesShouldCompareToDefaultLinkedList()
+	{
+		DSTL.LinkedList<int> dll = new();
+		LinkedList<int> pll = new();
+
+		dll.AddFirst(0);
+		pll.AddFirst(0);
+		dll.AddFirst(1);
+		pll.AddFirst(1);
+		dll.AddFirst(2);
+		pll.AddFirst(2);
+		dll.AddFirst(3);
+		pll.AddFirst(3);
+		dll.AddFirst(4);
+		pll.AddFirst(4);
+
+		Assert.That(dll.Head!.Data, Is.EqualTo(pll.First!.Value));
+		Assert.That(dll.Head!.Next!.Data, Is.EqualTo(pll.First!.Next!.Value));
+		Assert.That(dll.Head!.Next!.Next!.Data, Is.EqualTo(pll.First!.Next!.Next!.Value));
+		Assert.That(dll.Head!.Next!.Next!.Next!.Data, Is.EqualTo(pll.First!.Next!.Next!.Next!.Value));
+		Assert.That(dll.Head!.Next!.Next!.Next!.Next!.Data, Is.EqualTo(pll.First!.Next!.Next!.Next!.Next!.Value));
+	}
 	
 }
