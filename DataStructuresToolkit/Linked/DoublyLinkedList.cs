@@ -2,12 +2,35 @@ using System.Text;
 
 namespace DataStructuresToolkit.Linked;
 
+/// <summary>
+/// Handles linking an item to the next and the previous, along with a head and a tail.
+/// </summary>
+/// <typeparam name="T">The value of each node</typeparam>
 public class DoublyLinkedList<T> where T : struct
 {
+	/// <summary>
+	/// The first item.
+	/// </summary>
 	public DoubleNode<T>? Head { get; protected set; }
+	/// <summary>
+	/// The last item.
+	/// </summary>
 	public DoubleNode<T>? Tail { get; protected set; }
+	/// <summary>
+	/// The number of items in the list.
+	/// </summary>
 	public int Count { get; protected set; }
 
+	/// <summary>
+	/// Attaches item to the beginning of the list.
+	/// </summary>
+	/// <param name="data">The value contained in the new item.</param>
+	/// <remarks>
+	/// 	<complexity>
+	/// 		Time: O(1) - Always performs the same operations.
+	/// 		Space: O(1) - Only contains the new head.
+	/// 	</complexity>
+	/// </remarks>
 	public void AddFirst(T data)
 	{
 		Count++;
@@ -21,7 +44,17 @@ public class DoublyLinkedList<T> where T : struct
 		Head!.Prev = newHead;
 		Head = newHead;
 	}
-	
+
+	/// <summary>
+	/// Attaches item to the end of the list.
+	/// </summary>
+	/// <param name="data">The value contained in the new item.</param>
+	/// <remarks>
+	/// 	<complexity>
+	/// 		Time: O(1) - Always performs the same operations.
+	/// 		Space: O(1) - Only contains the new tail.
+	/// 	</complexity>
+	/// </remarks>
 	public void AddLast(T data)
 	{
 		Count++;
@@ -35,7 +68,18 @@ public class DoublyLinkedList<T> where T : struct
 		Tail!.Next = newTail;
 		Tail = newTail;
 	}
-	
+	/// <summary>
+	/// Look for a node within the list.
+	/// </summary>
+	/// <param name="node">The item to search for.</param>
+	/// <param name="offset">The number of items before the specified node.</param>
+	/// <returns>The found node if found, otherwise null.</returns>
+	/// <remarks>
+	/// 	<complexity>
+	/// 		Time: O(2/n) - Loops through items from each end. (Also does extra steps if offset specified)
+	/// 		Space: O(1) - Only handles references.
+	/// 	</complexity>
+	/// </remarks>	
 	public DoubleNode<T>? GetNode(DoubleNode<T> node, int offset = 0)
 	{
 		if (Head == null || Tail == null) return null;
@@ -70,6 +114,17 @@ public class DoublyLinkedList<T> where T : struct
 		return null;
 	}
 
+	/// <summary>
+	/// Gets a value from within the list.
+	/// </summary>
+	/// <param name="value">The value to look for.</param>
+	/// <returns>The value if found, otherwise null.</returns>
+	/// <remarks>
+	/// 	<complexity>
+	/// 		Time: O(n) - Loops through each item once.
+	/// 		Space: O(1) - Holds a reference to a list item.
+	/// 	</complexity>
+	/// </remarks>
 	public T? GetValue(T value)
 	{
 		if (Head == null) return null;
@@ -85,6 +140,16 @@ public class DoublyLinkedList<T> where T : struct
 		return null;
 	}
 
+	/// <summary>
+	/// Removes a node from the list.
+	/// </summary>
+	/// <param name="node">The item to remove.</param>
+	/// <remarks>
+	/// 	<complexity>
+	/// 		Time: O(1) - Uses GetNode, so no loops used
+	/// 		Space: O(1) - Only holds reference to a node.
+	/// 	</complexity>
+	/// </remarks>
 	public void Remove(DoubleNode<T> node)
 	{
 		if (Head == null && Tail == null) return;
@@ -107,7 +172,17 @@ public class DoublyLinkedList<T> where T : struct
 			delNode.Prev!.Next = delNode.Next;
 		}
 	}
-
+	/// <summary>
+	/// Reads the list forward and makes it into a string.
+	/// </summary>
+	/// <param name="separator">The characters between each node value.</param>
+	/// <returns>A string containing all the nodes, with head and end specifiers.</returns>
+	/// <remarks>
+	/// 	<complexity>
+	/// 		Time: O(n) - Loops once
+	/// 		Space: O(1) - Uses stringbuilder and a pointer to the head.
+	/// 	</complexity>
+	/// </remarks>
 	public string ReadForward(string separator = " -> ")
 	{
 		if (Head == null || Tail == null) return "";
@@ -127,6 +202,17 @@ public class DoublyLinkedList<T> where T : struct
 		return sb.ToString();
 	}
 
+	/// <summary>
+	/// Reads the list backward and makes it into a string.
+	/// </summary>
+	/// <param name="separator">The characters between each node value.</param>
+	/// <returns>A string containing all the nodes, with head and end specifiers.</returns>
+	/// <remarks>
+	/// 	<complexity>
+	/// 		Time: O(n) - Loops once
+	/// 		Space: O(1) - Uses stringbuilder and a pointer to the tail.
+	/// 	</complexity>
+	/// </remarks>
 	public string ReadBackward(string separator = " -> ")
 	{
 		if (Head == null || Tail == null) return "";
