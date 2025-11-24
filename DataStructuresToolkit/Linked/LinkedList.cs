@@ -3,7 +3,7 @@ using System.Text;
 
 namespace DataStructuresToolkit.Linked;
 
-public class LinkedList<T>
+public class LinkedList<T> where T : struct
 {
 	public Node<T>? Head { get; protected set; }
 

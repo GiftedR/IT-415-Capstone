@@ -2,7 +2,7 @@ using System.Text;
 
 namespace DataStructuresToolkit.Linked;
 
-public class DoublyLinkedList<T>
+public class DoublyLinkedList<T> where T : struct
 {
 	public DoubleNode<T>? Head { get; protected set; }
 	public DoubleNode<T>? Tail { get; protected set; }
@@ -44,6 +44,8 @@ public class DoublyLinkedList<T>
 
 		do
 		{
+			_fore = _fore.Next!;
+			_back = _back.Prev!;
 			if (_fore == node || _back == node)
 			{
 				if (offset < 1)
@@ -59,8 +61,6 @@ public class DoublyLinkedList<T>
 				}
 					
 			}
-			_fore = _fore.Next!;
-			_back = _back.Prev!;
 		}
 		while (
 			_fore != _back &&
@@ -72,16 +72,17 @@ public class DoublyLinkedList<T>
 
 	public T? GetValue(T value)
 	{
-		if (Head == null) return default;
-		Node<T> _fore = Head!;
+		if (Head == null) return null;
+		DoubleNode<T> _fore = Head!;
 
-		while ( _fore.Next != null )
+		do
 		{
-			if ((dynamic)_fore.Data! == (dynamic)value!) return value;
+			if (EqualityComparer<T>.Default.Equals(_fore.Data, value)) return value;
 			_fore = _fore.Next!;
 		}
+		while ( _fore != null );
 
-		return default;
+		return null;
 	}
 
 	public void Remove(DoubleNode<T> node)

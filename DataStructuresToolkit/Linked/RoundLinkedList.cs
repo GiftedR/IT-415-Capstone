@@ -2,7 +2,7 @@ using System.Text;
 
 namespace DataStructuresToolkit.Linked;
 
-public class RoundLinkedList<T>
+public class RoundLinkedList<T> where T : struct
 {
 	public DoubleNode<T>? Head { get; protected set; }
 	public DoubleNode<T>? Tail { get; protected set; }
@@ -42,14 +42,50 @@ public class RoundLinkedList<T>
 		Tail = newTail;
 	}
 	
-	public DoubleNode<T>? GetNode(DoubleNode<T> node)
+	public DoubleNode<T>? GetNode(DoubleNode<T> node, int offset = 0)
+	{
+		if (Head == null || Tail == null) return null;
+		DoubleNode<T> _fore = Head!;
+		DoubleNode<T> _back = Tail!;
+
+		do
+		{
+			_fore = _fore.Next!;
+			_back = _back.Prev!;
+			if (_fore == node || _back == node)
+			{
+				if (offset < 1)
+				{
+					return node;
+				}
+				else
+				{
+					DoubleNode<T> _ptr = node;
+					for (int idx = 0; idx < offset; idx++)
+						_ptr = _ptr.Prev!;
+					return _ptr;
+				}
+			}
+		}
+		while (
+			_fore != _back &&
+			_fore.Prev != _back
+		);
+
+		return null;
+	}
+	
+	public T? GetValue(T value)
 	{
 		if (Head == null || Tail == null) return null;
 		DoubleNode<T> _fore = Head!;
 		DoubleNode<T> _back = Tail!;
 		do
 		{
-			if (_fore == node || _back == node) return node;
+			if (EqualityComparer<T>.Default.Equals(_fore.Data, value))
+				return _fore.Data;
+			if (EqualityComparer<T>.Default.Equals(_back.Data, value))
+				return _back.Data;
 			_fore = _fore.Next!;
 			_back = _back.Prev!;
 		}
