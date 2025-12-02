@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Text;
 using DataStructuresToolkit;
+using DataStructuresToolkit.Graphs;
 using DataStructuresToolkit.StackQueues;
 
 namespace DemoHarness;
@@ -153,6 +154,20 @@ internal class Program
 		
 		{ // Associative Helpers
 			AssociativeHelpers.Run();
+		}
+
+		{ // Graph Demo
+			Graph<string> gph = new Graph<string>();
+			List<string> names = ["Bob!", "Kyle!", "Mickey!", "Carl!", "Anistasia!"];
+			Console.WriteLine();
+
+			gph.AddItem(names[0], [names[1], names[2], names[3], names[4]]);
+			gph.AddItem(names[1], [names[0], names[2], names[3], names[4]]);
+			gph.AddItem(names[2], [names[0], names[1], names[3], names[4]]);
+			gph.AddItem(names[3], [names[0], names[1], names[2], names[4]]);
+			gph.AddItem(names[4], [names[0], names[1], names[2], names[3]]);
+
+			Console.WriteLine(ArrayStringListHelpers.ConcatenateNamesBuilder(gph.DFS(names[0]).ToArray()));
 		}
 	}
 	private static int[] gen(int size)

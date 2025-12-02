@@ -62,6 +62,7 @@ public class Graph<T> where T : IComparable
 	{
 		List<T> items = new();
 		p_SearchHistory.Add(staringitem);
+		items.Add(staringitem);
 		foreach (T connection in p_Graph[staringitem])
 		{
 			if (!p_SearchHistory.Contains(connection))

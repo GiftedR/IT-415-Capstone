@@ -39,8 +39,6 @@ public class Graph_Tests
 		gph.AddItem(names[3], [names[0], names[1], names[2], names[4]]);
 		gph.AddItem(names[4], [names[0], names[1], names[2], names[3]]);
 
-		TestContext.Out.WriteLine(gph.DFS(names[0]).Count);
-
 		Assert.That(gph.DFS(names[0]), Is.EqualTo(names));
 	}
 }
