@@ -159,14 +159,21 @@ internal class Program
 		{ // Graph Demo
 			Graph<string> gph = new Graph<string>();
 			List<string> names = ["Bob!", "Kyle!", "Mickey!", "Carl!", "Anistasia!"];
-			Console.WriteLine();
+			Console.WriteLine("Beginning Graph Demo");
 
+			Console.WriteLine($"\nAdding \"{names[0]}\" with connections \"{names[1]}\", \"{names[2]}\", \"{names[3]}\", \"{names[4]}\"");
 			gph.AddItem(names[0], [names[1], names[2], names[3], names[4]]);
+			Console.WriteLine($"\nAdding \"{names[1]}\" with connections \"{names[0]}\", \"{names[2]}\", \"{names[3]}\", \"{names[4]}\"");
 			gph.AddItem(names[1], [names[0], names[2], names[3], names[4]]);
+			Console.WriteLine($"\nAdding \"{names[2]}\" with connections \"{names[0]}\", \"{names[1]}\", \"{names[3]}\", \"{names[4]}\"");
 			gph.AddItem(names[2], [names[0], names[1], names[3], names[4]]);
+			Console.WriteLine($"\nAdding \"{names[3]}\" with connections \"{names[0]}\", \"{names[1]}\", \"{names[2]}\", \"{names[4]}\"");
 			gph.AddItem(names[3], [names[0], names[1], names[2], names[4]]);
+			Console.WriteLine($"\nAdding \"{names[4]}\" with connections \"{names[0]}\", \"{names[1]}\", \"{names[2]}\", \"{names[3]}\"");
 			gph.AddItem(names[4], [names[0], names[1], names[2], names[3]]);
 
+			Console.WriteLine("\nPerforming Depth first traversal on Graph");
+			
 			Console.WriteLine(ArrayStringListHelpers.ConcatenateNamesBuilder(gph.DFS(names[0]).ToArray()));
 		}
 	}
