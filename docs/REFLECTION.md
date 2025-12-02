@@ -1,5 +1,12 @@
 # Reflection
 
+## Week 10
+1. I made the choice to extend with a graph feature as it seemed mode useful to have rather than a set feature. In this case, the graph can be used for items that require a distance between them or for relationships. There are two main use cases for the graph. The first major one is for map traversal, like Google Maps or Apple Maps. Where then searches can use the structure to efficiently search for directions and distances between places. The other is for databases. These are Graph Databases and are often used for personalized recommendations for users.
+
+The benchmark between the List and Hashset demonstrated a massive trade off. When searching for a Million items the Hashset found the correct item within 2700 nanoseconds, while the List searching the same list it took 5.638 milliseconds (5,638,000 nanoseconds), Both of these lists had the item to search for directly in the middle. While this different may not seem like much, when searching for billions or trillions of items it can get very costly if done incorrectly.
+
+Choosing an option over the other doesn't affect clarity or efficiency of the showcase, it just adds more features to an ever expanding library. It also shows more examples of naming conventions and documentation comments.
+
 ## Week 9
 1. I already had an inkling of how linked lists worked as I had played with them while using pointers. The main difference is that normal collective types use consecutive / heap based memory patterns. While lists use more reference or pointer based patterns. The ladder is faster as it doesn't require waiting in order for the system to allocate additional memory.
 
