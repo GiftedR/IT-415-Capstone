@@ -176,6 +176,43 @@ internal class Program
 			
 			Console.WriteLine(ArrayStringListHelpers.ConcatenateNamesBuilder(gph.DFS(names[0]).ToArray()));
 		}
+
+		{ // Hashset vs List Demo
+			HashSet<string> hset = new();
+			List<string> lst = new();
+			int randomItemCount = 1_000_000;
+			Guid itemToLookFor = Guid.NewGuid();
+			Stopwatch hsetTime = new();
+			Stopwatch lstTime = new();
+			
+			Console.WriteLine("Beginning Hashset vs List demo:");
+
+			Console.WriteLine($"Adding {randomItemCount} string items to List and Hashset.");
+			foreach(int idx in Enumerable.Range(0, randomItemCount))
+			{
+				Guid addedguid = Guid.NewGuid();
+				if (idx == randomItemCount / 2)
+				{
+					Console.WriteLine($"Adding {itemToLookFor} to middle.");
+					hset.Add(itemToLookFor.ToString());
+					lst.Add(itemToLookFor.ToString());
+				}
+				else
+				{
+					hset.Add(addedguid.ToString());
+					lst.Add(addedguid.ToString());
+				}
+			}
+			Console.WriteLine($"Searching for { itemToLookFor }.");
+			hsetTime.Start();
+			hset.Contains(itemToLookFor.ToString());
+			hsetTime.Stop();
+			lstTime.Start();
+			lst.Contains(itemToLookFor.ToString());
+			lstTime.Stop();
+
+			Console.WriteLine($"Search Times: \n\tHashSet: {hsetTime.Elapsed}\n\tList: {lstTime.Elapsed}");
+		}
 	}
 	private static int[] gen(int size)
 	{
