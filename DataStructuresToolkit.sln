@@ -9,6 +9,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresToolkit.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoHarness", "DemoHarness\DemoHarness.csproj", "{3920766B-1944-49A3-AD83-C36EFA997F81}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructuresToolkit.UI", "DataStructuresToolkit.UI", "{69983E0E-DC8D-437C-841F-896D1C7B2B1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresToolkit.UI", "DataStructuresToolkit.UI\DataStructuresToolkit.UI\DataStructuresToolkit.UI.csproj", "{C3F1DC2E-CE20-4A93-B9FA-19E05A84474B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresToolkit.UI.Wpf", "DataStructuresToolkit.UI\DataStructuresToolkit.Launch.Windows\DataStructuresToolkit.UI.Wpf.csproj", "{14C79EEA-AC1A-484B-9905-51A7D4C09F46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresToolkit.UI.Mac", "DataStructuresToolkit.UI\DataStructuresToolkit.Launch.Mac\DataStructuresToolkit.UI.Mac.csproj", "{52FC0515-1643-42F8-AE76-2F02FAA7F4A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresToolkit.UI.Gtk", "DataStructuresToolkit.UI\DataStructuresToolkit.Launch.Linux\DataStructuresToolkit.UI.Gtk.csproj", "{40AEF522-83CE-46B9-8350-4119298C2B73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +40,27 @@ Global
 		{3920766B-1944-49A3-AD83-C36EFA997F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3920766B-1944-49A3-AD83-C36EFA997F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3920766B-1944-49A3-AD83-C36EFA997F81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F1DC2E-CE20-4A93-B9FA-19E05A84474B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F1DC2E-CE20-4A93-B9FA-19E05A84474B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F1DC2E-CE20-4A93-B9FA-19E05A84474B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F1DC2E-CE20-4A93-B9FA-19E05A84474B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C79EEA-AC1A-484B-9905-51A7D4C09F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C79EEA-AC1A-484B-9905-51A7D4C09F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C79EEA-AC1A-484B-9905-51A7D4C09F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C79EEA-AC1A-484B-9905-51A7D4C09F46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52FC0515-1643-42F8-AE76-2F02FAA7F4A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52FC0515-1643-42F8-AE76-2F02FAA7F4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52FC0515-1643-42F8-AE76-2F02FAA7F4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52FC0515-1643-42F8-AE76-2F02FAA7F4A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40AEF522-83CE-46B9-8350-4119298C2B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40AEF522-83CE-46B9-8350-4119298C2B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40AEF522-83CE-46B9-8350-4119298C2B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40AEF522-83CE-46B9-8350-4119298C2B73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3F1DC2E-CE20-4A93-B9FA-19E05A84474B} = {69983E0E-DC8D-437C-841F-896D1C7B2B1C}
+		{14C79EEA-AC1A-484B-9905-51A7D4C09F46} = {69983E0E-DC8D-437C-841F-896D1C7B2B1C}
+		{52FC0515-1643-42F8-AE76-2F02FAA7F4A5} = {69983E0E-DC8D-437C-841F-896D1C7B2B1C}
+		{40AEF522-83CE-46B9-8350-4119298C2B73} = {69983E0E-DC8D-437C-841F-896D1C7B2B1C}
 	EndGlobalSection
 EndGlobal
