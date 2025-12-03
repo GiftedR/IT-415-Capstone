@@ -212,6 +212,9 @@ internal class Program
 			lstTime.Stop();
 
 			Console.WriteLine($"Search Times: \n\tHashSet: {hsetTime.Elapsed}\n\tList: {lstTime.Elapsed}");
+
+			Console.ForegroundColor = ConsoleColor.DarkYellow;
+			Console.WriteLine($"For a UI demo, Launch DataStructuresToolkit.UI with your specified platform");
 		}
 	}
 	private static int[] gen(int size)
