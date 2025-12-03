@@ -1,11 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Eto.Forms" Version="2.10.2" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Eto.Forms" Version="2.10.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="../../DataStructuresToolkit/DataStructuresToolkit.csproj" />
+	</ItemGroup>
 
 </Project>
