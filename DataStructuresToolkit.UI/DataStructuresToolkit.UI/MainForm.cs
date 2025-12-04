@@ -4,6 +4,7 @@ using Eto.Drawing;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace DataStructuresToolkit.UI
 {
@@ -24,9 +25,10 @@ namespace DataStructuresToolkit.UI
 			Eto.Style.Add<TextControl>("h4", text => text.Font = new Font(defaultFont, defaultFontSize * 1.00f, FontStyle.Bold));
 			Eto.Style.Add<TextControl>("h5", text => text.Font = new Font(defaultFont, defaultFontSize * 0.83f, FontStyle.Bold));
 			Eto.Style.Add<TextControl>("h6", text => text.Font = new Font(defaultFont, defaultFontSize * 0.67f, FontStyle.Bold));
-			Eto.Style.Add<TextControl>("f-white", text =>
+			Eto.Style.Add<TextControl>("f-main", text =>
 			{
-				text.TextColor = new Color(1, 1, 1, 1);
+				
+				text.TextColor = BackgroundColor.ToHSL().L < 0.5 ? new Color(1, 1, 1, 1) : new Color(0, 0, 0, 1);
 			});
 			Eto.Style.Add<Label>("center", text =>
 			{

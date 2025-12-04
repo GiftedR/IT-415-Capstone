@@ -23,7 +23,7 @@ namespace DataStructuresToolkit.UI
 			demoCommand.Executed += (sender, e) =>
 			{
 				output.Text = "";
-				output.Style = "f-white h5";
+				output.Style = "f-main h5";
 				CustomStack<string> cs = new();
 				output.WriteLine("1) Pushing First Item: This comes before.");
 				cs.Push("This comes before.");
@@ -78,7 +78,7 @@ namespace DataStructuresToolkit.UI
 			demoCommand.Executed += (sender, e) =>
 			{
 				output.Text = "";
-				output.Style = "f-white h5";
+				output.Style = "f-main h5";
 				CustomQueue<string> cq = new();
 				output.WriteLine("1) Enqueueing First Item: First is the Worst.");
 				cq.Enqueue("First is the Worst.");
@@ -133,7 +133,7 @@ namespace DataStructuresToolkit.UI
 			demoCommand.Executed += (sender, e) =>
 			{
 				output.Text = "";
-				output.Style = "f-white h5";
+				output.Style = "f-main h5";
 				Stopwatch sw = new();
 				TimeSpan in100, in1000, in10000, qs100, qs1000, qs10000;
 
@@ -225,7 +225,7 @@ namespace DataStructuresToolkit.UI
 			demoCommand.Executed += (sender, e) =>
 			{
 				output.Text = "";
-				output.Style = "f-white h5";
+				output.Style = "f-main h5";
 				Stopwatch sw = new();
 				TimeSpan ls100, ls1000, ls10000, bs100, bs1000, bs10000;
 				Random rng = new();
@@ -323,7 +323,7 @@ namespace DataStructuresToolkit.UI
 			demoCommand.Executed += (sender, e) =>
 			{
 				output.Text = "";
-				output.Style = "f-white h5";
+				output.Style = "f-main h5";
 				Dictionary<string, string> dct = new();
 
 				output.WriteLine("Setting Alice with the phone number 555-1234...");
@@ -376,7 +376,7 @@ namespace DataStructuresToolkit.UI
 			demoCommand.Executed += (sender, e) =>
 			{
 				output.Text = "";
-				output.Style = "f-white h5";
+				output.Style = "f-main h5";
 				HashSet<string> hst = new();
 
 				output.WriteLine("Inserting Apple into the HashSet");
@@ -428,7 +428,7 @@ namespace DataStructuresToolkit.UI
 			demoCommand.Executed += (sender, e) =>
 			{
 				output.Text = "";
-				output.Style = "f-white h5";
+				output.Style = "f-main h5";
 				Graph<string> gph = new Graph<string>();
 				List<string> names = ["Bob!", "Kyle!", "Mickey!", "Carl!", "Anistasia!"];
 				output.WriteLine("Beginning Graph Demo");
@@ -489,7 +489,7 @@ namespace DataStructuresToolkit.UI
 			demoCommand.Executed += (sender, e) =>
 			{
 				output.Text = "";
-				output.Style = "f-white h5";
+				output.Style = "f-main h5";
 				HashSet<string> hset = new();
 				List<string> lst = new();
 				int randomItemCount = 1_000_000;
