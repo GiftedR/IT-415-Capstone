@@ -21,6 +21,10 @@ _There is some code we were forced to start with, but names were changed and str
 
 ## How
 
+__Two Main Ways__
+- __[Using VSCode](#using-vscode)__
+- __[Using Visual Studio 2022](#using-visual-studio-2022)__
+
 Running the project is quite simple, and only varies slightly between platforms.
 
 ### Using VSCode
@@ -126,6 +130,9 @@ __Now you should see it and be able to run it.__
 ## Tests
 
 Tests are written using NUnit they follow an AAA like pattern and are not as verbose as they should be.
+
+Although I simplified / optimized a multitude of tests and had to inadvertently fix some of the algorithms. The main way I approached the tests is trying to find a way of using TestCases. Allowing me to swap things out easily without writing new tests entirely. 
+_[Example of thing I had to change due to stack a overflow](https://github.com/GiftedR/IT-415-Capstone/blob/c6fa2b1af2bed0d02151753bc906f7f599a21040/DataStructuresToolkit/SortingSearchingHelpers.cs#L83)_
 
 __All the Tests:__
 
