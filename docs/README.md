@@ -5,6 +5,10 @@ _[Types have been moved](DATATYPES.md)_
 ## What
 Data structures Toolkit (DST) is a library of common data types to be used as a quick access to source code, being able to easily modify it to specific needs.
 
+![Project Running on Windows](video/DTKSample_Smooth.gif)
+![Project Running on Linux](RunningDemoLinux_01.png)
+![Project Running on Windows](RunningDemoWindows_01.png)
+
 ## Why
 
 DST was made as a part of IT415 class, each week iterating on the previous to create a larger project. The final week was a free reign to expand on what we believed we needed. This is where the UI Project came from.

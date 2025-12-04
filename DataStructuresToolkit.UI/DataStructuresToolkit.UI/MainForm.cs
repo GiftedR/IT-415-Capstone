@@ -38,7 +38,7 @@ namespace DataStructuresToolkit.UI
 
 			Control homeLayout = new TableLayout
 			{
-				Width = 1260,
+				Width = MinimumSize.Width - 20,
 				Padding = 10,
 				Rows =
 				{
