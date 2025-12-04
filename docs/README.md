@@ -122,3 +122,11 @@ __To run the project click the green arrow at the top to run the app. (_If it do
 ___If its not in that menu, you will have to set it up as the startup project, by clicking the folder labelled "DataStructuresToolkit.UI" in the Solution Explorer, right clicking the DataStructuresToolkit.UI.Wpf and Click "Set As Startup Project"___
 
 __Now you should see it and be able to run it.__
+
+## Tests
+
+Tests are written using NUnit they follow an AAA like pattern and are not as verbose as they should be.
+
+__All the Tests:__
+
+![Image of All of the tests](StichedImages.jpeg)
