@@ -67,9 +67,9 @@ public class BST
 	/// 		Space: O(1) - Calls other search.
 	/// 	</complexity>
 	/// </remarks>
-	public bool Search(int value)
+	public bool Contains(int value)
 	{
-		return Search(Root, value);
+		return Contains(Root, value);
 	}
 
 	/// <summary>
@@ -84,7 +84,7 @@ public class BST
 	/// 		Space: O(1) - Creates no new variables.
 	/// 	</complexity>
 	/// </remarks>
-	private bool Search(TreeNode? current, int value)
+	private bool Contains(TreeNode? current, int value)
 	{
 		if (current == null)
 			return false;
@@ -92,9 +92,9 @@ public class BST
 		if (current.Data == value)
 			return true;
 		else if (value < current.Data)
-			return Search(current.Left, value);
+			return Contains(current.Left, value);
 		else
-			return Search(current.Right, value);
+			return Contains(current.Right, value);
 	}
 
 	/// <summary>
@@ -119,4 +119,33 @@ public class BST
 			Right = new TreeNode(43)
 		}
 	};
+
+	/// <summary>
+	/// Gets the height of the tree.
+	/// </summary>
+	/// <param name="tree">The tree.</param>
+	/// <returns>The height.</returns>
+	/// <remarks>
+	/// 	<complexity>
+	/// 		Time: O(1) - Calls GetHeight on root node.
+	/// 		Space: O(1) - Calls GetHeight on root node.
+	/// 	</complexity>
+	/// </remarks>
+	#pragma warning disable CS8604
+	public static int GetHeight(BST tree) => TreeNode.GetHeight(tree.Root);
+
+	/// <summary>
+	/// Gets the depth of the tree.
+	/// </summary>
+	/// <param name="tree">The tree.</param>
+	/// <param name="target">The item to look for.</param>
+	/// <returns>The depth.</returns>
+	/// <remarks>
+	/// 	<complexity>
+	/// 		Time: O(1) - Calls GetDepth on root node.
+	/// 		Space: O(1) - Calls GetDepth on root node.
+	/// 	</complexity>
+	/// </remarks>
+	public static int GetDepth(BST tree, int target) => TreeNode.GetDepth(tree.Root, target);
+	#pragma warning restore CS8604
 }

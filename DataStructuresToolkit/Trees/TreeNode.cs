@@ -126,5 +126,25 @@ public class TreeNode
 			return RightDepth + 1;
 		return -1;
 	}
+
+	/// <summary>
+	/// Creates a sample tree for use with traversals, depth and height.
+	/// </summary>
+	/// <returns>Sample Tree</returns>
+	/// <remarks>
+	/// 	<complexity>
+	/// 		Time: O(1) - Only makes a new object.
+	/// 		Space: O(1) - Only called once.
+	/// 	</complexity>
+	/// </remarks>
+	public static TreeNode CreateTeachingTree() => new TreeNode(38)
+		{
+			Left = new TreeNode(27)
+			{
+				Left = new TreeNode(3),
+				Right = new TreeNode(9)
+			},
+			Right = new TreeNode(43)
+		};
 	public override string ToString() => Data.ToString();
 }
