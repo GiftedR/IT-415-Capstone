@@ -56,6 +56,22 @@ Choosing an option over the other doesn't affect clarity or efficiency of the sh
 >
 > [4] : []
 
+## Week 7
+
+1. When approaching the balance of the tree, it was as simple as comparing the height of each side relative to the node we are balancing. Right heavy and left heavy performed the same operations, just as a mirror image of one another. When deciding when to check, we run the checks whenever items are inserted in order to maintain the balance. Making sure we hide that balancing through other methods, in order to force users to go out of there way to attempt to break items.
+
+AVL trees are a simple concept. If the tree ends up weighted more on one side, perform rotations till it is no longer unbalanced. With the priority queue, I had assumed it was closer to a tree that was grouped by priority rather than an array that just gets sorted by the priority when items get added. I am unsure if one would be more beneficial over the other and in what regards they might be worse.
+
+It is hard to determine a real world application for either of these data structures, as with most programming and software, it is highly contextual on the problem that you are making a solution for. There might also be cases where you might end up using both, so they can not be mutually exclusive.
+
+## Week 6
+
+1. Traversal did not change my view of the tree, I already had the concepts that made up preorder inorder and postorder, but did not know the names to them. They are the permutations of the order that you can record the data within the tree while still having the left child come before the right. Inorder records the left child, then the current, then the right. Preorder records the current, then the left, then the right. Postorder records the left, then the right, then the current.
+
+Efficiency is greatly affected by height as the shorter the tree, the more you can guarantee speed when finding items. Take data structure that contains 16,777,216 items. A linked list or a highly skewed tree would take 16,777,216 operations to search the whole list. However, when it is contained in a binary tree structure, that then gets eliminated down to only 24 searches. There is also the analogy floating around that if you had the entirety of the universe on video, it would only take a few hours to find any moment in history.
+
+An example where binary search would be handy is in terms of search. Where you can pair it up with a priority queue to define results by similarity. You would start with the first combination of letters and and slowly add them to the queue with higher priority the more letters they have in common with the search.
+
 ## Week 5
 
 1. The easiest methods to implement were the linear search and the binary search. This is because the idea behind them was simple enough to get written and debug if needed. This is in contrast to Quick Sort which wasn't as simple to debug. There was also an issue where stack overflows would out print the console buffer (Print so many lines that the useful information was hidden). This caused me to rewrite Quick sort with a more iterative approach instead of recursively.
