@@ -2,7 +2,11 @@
 
 ## Week 7
 
-1. 
+1. When approaching the balance of the tree, it was as simple as comparing the height of each side relative to the node we are balancing. Right heavy and left heavy performed the same operations, just as a mirror image of one another. When deciding when to check, we run the checks whenever items are inserted in order to maintain the balance. Making sure we hide that balancing through other methods, in order to force users to go out of there way to attempt to break items.
+
+AVL trees are a simple concept. If the tree ends up weighted more on one side, perform rotations till it is no longer unbalanced. With the priority queue, I had assumed it was closer to a tree that was grouped by priority rather than an array that just gets sorted by the priority when items get added. I am unsure if one would be more beneficial over the other and in what regards they might be worse.
+
+It is hard to determine a real world application for either of these data structures, as with most programming and software, it is highly contextual on the problem that you are making a solution for. There might also be cases where you might end up using both, so they can not be mutually exclusive.
 
 ## Week 6
 
