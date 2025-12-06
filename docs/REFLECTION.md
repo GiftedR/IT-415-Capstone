@@ -1,5 +1,9 @@
 # Reflection
 
+## Week 7
+
+1. 
+
 ## Week 6
 
 1. Traversal did not change my view of the tree, I already had the concepts that made up preorder inorder and postorder, but did not know the names to them. They are the permutations of the order that you can record the data within the tree while still having the left child come before the right. Inorder records the left child, then the current, then the right. Preorder records the current, then the left, then the right. Postorder records the left, then the right, then the current.
@@ -7,8 +11,6 @@
 Efficiency is greatly affected by height as the shorter the tree, the more you can guarantee speed when finding items. Take data structure that contains 16,777,216 items. A linked list or a highly skewed tree would take 16,777,216 operations to search the whole list. However, when it is contained in a binary tree structure, that then gets eliminated down to only 24 searches. There is also the analogy floating around that if you had the entirety of the universe on video, it would only take a few hours to find any moment in history.
 
 An example where binary search would be handy is in terms of search. Where you can pair it up with a priority queue to define results by similarity. You would start with the first combination of letters and and slowly add them to the queue with higher priority the more letters they have in common with the search.
-
-
 
 ## Week 5
 
